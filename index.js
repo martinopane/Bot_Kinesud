@@ -43,7 +43,7 @@ Generá UNA idea de publicación para el día de hoy orientada a Instagram. Debe
 REQUISITOS DEL COPY:
 - Conciso, dinámico y fácil de leer en celular (párrafos cortos y emojis).
 - Formato: Gancho inicial + Explicación clara/puntos clave + Llamado a la acción.
-- Siempre incluir al pie la dirección (República del Líbano 2628, Quilmes Oeste) y WhatsApp de turnos (11 3895-5502 / 11 5065-0300).
+- Siempre incluir al pie la dirección (República del Líbano 2628, Quilmes Oeste) y WhatsApp de turnos (11 5584-1264 para kinesiologia,11 3895-5502 para osteopatia y rpg / 11 5065-0300 consultas en general).
 - Hashtags relevantes al final (#Kinesud #KinesiologiaQuilmes #Osteopatia #RPG #QuilmesOeste #Salud).
 
 Devolvé ÚNICAMENTE un JSON válido con esta estructura:

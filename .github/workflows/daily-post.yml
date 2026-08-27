@@ -1,0 +1,30 @@
+name: Enviar Idea Diaria Kinesud
+
+on:
+  schedule:
+    # Se ejecuta todos los días a las 11:00 UTC (8:00 AM hora de Argentina)
+    - cron: '0 11 * * *'
+  workflow_dispatch: # Permite ejecutarlo manualmente con un botón desde GitHub para probar
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Ejecutar bot
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          DESTINATION_EMAIL: ${{ secrets.DESTINATION_EMAIL }}
+        run: node index.js
