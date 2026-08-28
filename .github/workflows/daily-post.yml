@@ -2,9 +2,8 @@ name: Enviar Idea Diaria Kinesud
 
 on:
   schedule:
-    # Se ejecuta todos los días a las 11:00 UTC (8:00 AM hora de Argentina)
     - cron: '0 11 * * *'
-  workflow_dispatch: # Permite ejecutarlo manualmente con un botón desde GitHub para probar
+  workflow_dispatch:
 
 jobs:
   run-bot:
