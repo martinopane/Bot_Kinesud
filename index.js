@@ -69,8 +69,8 @@ Devolvé ÚNICAMENTE un JSON válido con esta estructura:
     year: 'numeric'
   });
 
-  await resend.emails.send({
-    from: 'Kinesud Bot <onboarding@resend.dev>',
+  const { data, error } = await resend.emails.send({
+    from: 'Kinesud Bot <bot@kinesud.com.ar>',
     to: [process.env.DESTINATION_EMAIL],
     subject: `💡 Idea Instagram Kinesud [${fechaHoy}]: ${postData.tema}`,
     html: `
@@ -99,7 +99,12 @@ Devolvé ÚNICAMENTE un JSON válido con esta estructura:
     `
   });
 
+  if (error) {
+    throw new Error(`Error en Resend: ${error.message}`);
+  }
+
   console.log('✅ ¡Idea de publicación enviada con éxito!');
+ 
 }
 
 main().catch(console.error);
